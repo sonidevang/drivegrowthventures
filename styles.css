@@ -975,7 +975,8 @@ html[data-theme="dark"] .hero-glow{background:radial-gradient(420px circle at va
    V4 — portfolio logo-forward cards
    ============================================ */
 .featured-logo{grid-template-columns:0.82fr 1.18fr;}
-.fl-brand{display:flex;align-items:center;justify-content:center;padding:56px 36px;min-height:100%;background:linear-gradient(140deg,var(--purple-dark),var(--purple));}
+.fl-brand{display:flex;align-items:center;justify-content:center;padding:48px 40px;min-height:100%;background:linear-gradient(140deg,#ffffff,#f1edf8);border-right:1px solid var(--border);}
+.fl-logo{width:82%;max-width:320px;height:auto;display:block;}
 .fl-content{padding:44px 40px;}
 .brand-wordmark{font-weight:800;letter-spacing:.01em;color:#fff;font-size:clamp(30px,3.2vw,42px);line-height:1.1;text-align:center;}
 .brand-wordmark .bw-accent{color:var(--gold);}
