@@ -937,7 +937,9 @@ html[data-theme="dark"] .hero-glow{background:radial-gradient(420px circle at va
 .hl-item:hover{opacity:1;}
 .hl-item img{display:block;width:auto;}
 .hl-item .hl-word{font-weight:700;font-size:19px;letter-spacing:-.01em;color:var(--purple-dark);white-space:nowrap;}
-@media(max-width:640px){.hl-row{gap:22px 26px;}.hl-mark{font-size:16px;}.hl-item .hl-word{font-size:16px;}}
+.hl-glean{height:26px;}
+.hl-ziro{height:32px;}
+@media(max-width:640px){.hl-row{gap:22px 26px;}.hl-mark{font-size:16px;}.hl-item .hl-word{font-size:16px;}.hl-glean{height:21px;}.hl-ziro{height:26px;}}
 
 /* Investment Thesis */
 .thesis{padding:96px 0;position:relative;overflow:hidden;}
