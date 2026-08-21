@@ -1,0 +1,30 @@
+name: Ensure analytics script
+# Guard: content updates keep overwriting the Vercel Web Analytics tag.
+# This workflow re-injects it into any HTML page that lost it.
+on:
+  push:
+    branches: [main]
+jobs:
+  ensure:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inject Vercel analytics script where missing
+        run: |
+          changed=0
+          for f in *.html; do
+            if ! grep -q "_vercel/insights" "$f"; then
+              sed -i 's|</body>|<script defer src="/_vercel/insights/script.js"></script></body>|' "$f"
+              echo "injected into $f"
+              changed=1
+            fi
+          done
+          if [ "$changed" = "1" ]; then
+            git config user.name "analytics-guard"
+            git config user.email "actions@users.noreply.github.com"
+            git add -A
+            git commit -m "Auto-restore Vercel analytics script"
+            git push
+          fi
